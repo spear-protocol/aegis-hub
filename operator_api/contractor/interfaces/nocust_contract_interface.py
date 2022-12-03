@@ -56,7 +56,7 @@ class NOCUSTContractInterface(EthereumInterface):
                 'chainId': self.web3.net.version,
                 'from': settings.HUB_OWNER_ACCOUNT_ADDRESS,
                 'gas': 5000000,
-                'gasPrice': self.web3.toWei('5', 'gwei'),
+                'gasPrice': self.web3.toWei('25', 'gwei'),
                 'nonce': transaction_nonce
             })
 

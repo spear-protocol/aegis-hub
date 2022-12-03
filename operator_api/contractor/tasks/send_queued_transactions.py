@@ -36,10 +36,12 @@ def send_queued_transactions():
                 signed_tx = contract_interface.sign_for_delivery_as_owner(
                     transaction, initial_gas_price)
                 try:
-                    logger.info('Publishing Signed TX: {}'.format(transaction))
+                    logger.info('Publishing Signed TX: {}'.format(signed_tx))
                     hash = contract_interface.send_raw_transaction(
                         signed_tx.rawTransaction)
                 except ValueError as e:
+                    logger.error('INITIAL TRANSACTION ATTEMPT ERROR: {}'.format(transaction.tag))
+                    logger.error('VALUE ERROR: {}'.format(e))
                     send_admin_email(
                         subject='INITIAL TRANSACTION ATTEMPT ERROR',
                         content='{}: {}'.format(transaction.tag, e))
@@ -84,6 +86,8 @@ def send_queued_transactions():
                 last_attempt.save()
                 continue
 
+            logger.warning('latest_block : {}'.format(latest_block))
+            logger.warning('last_attempt.block: {}'.format(last_attempt.block))
             if latest_block - last_attempt.block > 10:
                 new_gas_price = 2 * int(last_attempt.gas_price)
                 signed_tx = contract_interface.sign_for_delivery_as_owner(

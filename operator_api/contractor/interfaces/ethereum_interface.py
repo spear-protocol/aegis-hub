@@ -70,4 +70,5 @@ class EthereumInterface:
 
     def send_raw_transaction(self, transaction):
         logger.info('Publishing Raw Transaction: {}'.format(transaction))
+        #return self.web3.eth.sendRawTransaction(self.web3.toHex(transaction))
         return self.web3.eth.sendRawTransaction(transaction)
