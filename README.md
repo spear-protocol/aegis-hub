@@ -21,16 +21,16 @@ This is to operate a hub on public an already existing Blockchain (Rinkeby, Kova
 ```
 HUB_OWNER_ACCOUNT_ADDRESS=0xXXXXXX
 HUB_OWNER_ACCOUNT_KEY=XXXXXXXX
-HUB_LQD_CONTRACT_ADDRESS=0xXXXXXXXX
-HUB_LQD_CONTRACT_CONFIRMATIONS=20
+HUB_AUSD_CONTRACT_ADDRESS=0xXXXXXXXX
+HUB_AUSD_CONTRACT_CONFIRMATIONS=20
 SLA_TOKEN_ADDRESS=0xXXXXXXXX
 HUB_ETHEREUM_NODE_URL=YYYYYYY
 ```
 
 - `HUB_OWNER_ACCOUNT_ADDRESS` NOCUST hub Operator address with `0x` 
 - `HUB_OWNER_ACCOUNT_KEY` Private key of the operator without `0x` !! Very sensitve !!
-- `HUB_LQD_CONTRACT_ADDRESS` NOCUST contract address
-- `HUB_LQD_CONTRACT_CONFIRMATIONS` amount of blocks, used for confirmation of deposits, withdrawals, etc.. 
+- `HUB_AUSD_CONTRACT_ADDRESS` NOCUST contract address
+- `HUB_AUSD_CONTRACT_CONFIRMATIONS` amount of blocks, used for confirmation of deposits, withdrawals, etc.. 
 -  `HUB_ETHEREUM_NODE_URL` Http(s) RPC endpoint URL (i.g Infura)
 - `HUB_ETHEREUM_NETWORK_IS_POA` if in local developement you are using POA-networks (Like Rinkeby), then this flag should be set as `True`. For ETH mainnet use `False`
 

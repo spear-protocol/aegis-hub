@@ -161,7 +161,7 @@ class ContractorTests(RPCTestCase):
             node_hash = merkle_tree.leaf_hash(
                 merkle_tree.wallet_leaf_inner_hash,
                 {
-                    'contract': settings.HUB_LQD_CONTRACT_ADDRESS,
+                    'contract': settings.HUB_AUSD_CONTRACT_ADDRESS,
                     'token': eth_token.address,
                     'wallet': wallet.address,
                     'left': balance.left,
